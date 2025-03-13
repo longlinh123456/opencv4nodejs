@@ -68,7 +68,8 @@
     "build-debug": "npm run build && BINDINGS_DEBUG=true node bin/install.js rebuild",
     "checkExports": "npx @arethetypeswrong/cli $(npm pack)",
     "ncu": "npx --yes npm-check-updates -i",
-    "publish-next": "npm publish --dry-run --tag next"
+    "publish-next": "npm publish --dry-run --tag next",
+    "preinstall": "node -e \"try{require('@u4/opencv-build')}catch(e){require('child_process').execSync('npm install @u4/opencv-build')}\""
   },
   "dependencies": {
     "@u4/opencv-build": "1.1.1",
